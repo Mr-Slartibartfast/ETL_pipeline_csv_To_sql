@@ -6,10 +6,10 @@ public static class SqlLoader
     public static async Task Load(
         DataTable table)
     {
-        // Use one valid server identifier. Example: local named instance
+        // Use one valid server identifier. Example: local named instance // Adjust database name as needed below
         string connectionString =
             @"Server=.\SQLEXPRESS;
-              Database=Stocks;
+              Database=Stocks; 
               Trusted_Connection=True;
               TrustServerCertificate=True;";
 
@@ -22,7 +22,7 @@ public static class SqlLoader
             new(conn);
 
         bulk.DestinationTableName =
-            "dbo.VFIFX";
+            "dbo.VFIFX"; // Adjust table name as needed
 
         bulk.BatchSize = 5000;
 

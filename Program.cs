@@ -6,7 +6,7 @@ using ETL_pipeline_csv_To_sql;
 Console.WriteLine("Watching Landing Zone...");
 
 var watcher = new FileSystemWatcher(
-    @"C:\Users\jhhan\OneDrive\Desktop\LandingZone",
+    @"C:\Users\Desktop\LandingZone", // Adjust path as needed - path must exist before running !!
     "*.csv");
 
 // Track files currently being processed to avoid duplicate handling
