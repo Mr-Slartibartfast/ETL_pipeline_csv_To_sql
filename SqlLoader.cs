@@ -6,9 +6,10 @@ public static class SqlLoader
     public static async Task Load(
         DataTable table)
     {
+        // Use one valid server identifier. Example: local named instance
         string connectionString =
-            @"Server=localhost\SQLEXPRESS;
-              Database=DataWarehouse;
+            @"Server=.\SQLEXPRESS;
+              Database=Stocks;
               Trusted_Connection=True;
               TrustServerCertificate=True;";
 
@@ -21,7 +22,7 @@ public static class SqlLoader
             new(conn);
 
         bulk.DestinationTableName =
-            "dbo.Customer";
+            "dbo.VFIFX";
 
         bulk.BatchSize = 5000;
 
